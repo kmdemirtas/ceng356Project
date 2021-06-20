@@ -100,3 +100,5 @@ SELECT customer.first_name,
 FROM customer
     JOIN address ON customer.customer_address = address.id
 WHERE customer.first_name LIKE '%Jo%';
+
+-- I must add some queries about how is the account balance.
