@@ -1,3 +1,4 @@
+-- create address table (dependents: Employee, Supplier, Customer)
 CREATE TABLE address (
     ID integer PRIMARY KEY,
     Door_number integer CHECK (Door_number > 0),
@@ -7,11 +8,13 @@ CREATE TABLE address (
     State varchar
 );
 
+-- create position table (dependent: Employee)
 CREATE TABLE position (
     ID integer PRIMARY KEY,
     Position_name varchar NOT NULL UNIQUE
 );
 
+-- create customer table (dependent: Sell Order)
 CREATE TABLE customer (
     ID integer PRIMARY KEY,
     First_name varchar NOT NULL,
@@ -21,6 +24,7 @@ CREATE TABLE customer (
     Customer_Address integer NOT NULL REFERENCES address (ID)
 );
 
+-- create employee table (dependent: Sell Order, Purchase Order)
 CREATE TABLE employee (
     ID integer PRIMARY KEY,
     First_name varchar NOT NULL,
@@ -32,11 +36,13 @@ CREATE TABLE employee (
     Start_date date NOT NULL
 );
 
+-- create brand table (dependent: Product)
 CREATE TABLE brand (
     ID integer PRIMARY KEY,
     Brand_name varchar NOT NULL UNIQUE
 );
 
+-- create supplier table (dependent: Purchase Order)
 CREATE TABLE supplier (
     ID integer PRIMARY KEY,
     Supplier_name varchar NOT NULL UNIQUE,
@@ -44,11 +50,13 @@ CREATE TABLE supplier (
     Phone_number varchar NOT NULL UNIQUE
 );
 
+-- create category table (dependent: Product)
 CREATE TABLE category (
     ID integer PRIMARY KEY,
     Name varchar NOT NULL UNIQUE
 );
 
+-- create product table (dependent: Sell Order, Purchase Order)
 CREATE TABLE product (
     ID integer PRIMARY KEY,
     Product_name varchar NOT NULL,
@@ -59,6 +67,7 @@ CREATE TABLE product (
     UNIQUE (Product_name, Product_brand)
 );
 
+-- create sell order table
 CREATE TABLE sell_order (
     Sell_ID integer,
     Product integer NOT NULL REFERENCES product (ID),
@@ -70,6 +79,7 @@ CREATE TABLE sell_order (
     PRIMARY KEY (Sell_ID, Product)
 );
 
+-- create purchase order table
 CREATE TABLE purchase_order (
     Purchase_ID integer,
     Product integer NOT NULL REFERENCES product (id),

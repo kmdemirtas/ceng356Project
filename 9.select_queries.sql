@@ -1,4 +1,4 @@
--- get product that has not stock --
+-- get product that has not stock
 SELECT *
 FROM product
 WHERE product_stock = 0;
@@ -62,7 +62,7 @@ WHERE brand.brand_name = 'Samsung'
 GROUP BY purchase_order.product,
     product_name;
 
--- get categories ordered by number sold --
+-- get categories ordered by number sold
 SELECT category.name as "Category",
     sum(amount) as "Total Sold"
 FROM sell_order
@@ -71,7 +71,7 @@ FROM sell_order
 GROUP BY category.name
 ORDER BY sum(amount) DESC;
 
---calculate total amount for all purchase orders, order by order date --
+--calculate total amount for all purchase orders, order by order date
 SELECT sum(amount * price),
     purchase_id
 FROM purchase_order
@@ -79,14 +79,14 @@ GROUP BY purchase_id,
     purchase_date
 ORDER BY purchase_date ASC;
 
--- calculate total amount for a sell order --
+-- calculate total amount for a sell order
 SELECT sum(amount * price),
     sell_id
 FROM sell_order
 WHERE sell_id = 1
 GROUP BY sell_id;
 
--- Total best buyer among the customers --
+-- Total best buyer among the customers
 SELECT customer.first_name,
     customer.last_name,
     sum(amount * price)

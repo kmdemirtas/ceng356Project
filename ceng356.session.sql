@@ -1,0 +1,1 @@
+UPDATE position SET position_name = 'Purchasing Manager' WHERE id = 2;

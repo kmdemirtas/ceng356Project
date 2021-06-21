@@ -1,4 +1,4 @@
--- employee 1 --
+-- employee 1
 INSERT INTO position
     VALUES (1, 'Manager');
 
@@ -8,9 +8,9 @@ INSERT INTO address
 INSERT INTO employee
     VALUES (1, 'Jason', 'Jones', '315-335-7456', 'Jason.Jones@electronicsstore.com', 1, 1, '2020-12-20');
 
--- employee 2 --
+-- employee 2
 INSERT INTO position
-    VALUES (2, 'Assisstant Manager');
+    VALUES (2, 'Purchasing Manager');
 
 INSERT INTO address
     VALUES (2, 12, 64, '3760  Church Street', 'Staten Island', 'New York');
@@ -18,7 +18,7 @@ INSERT INTO address
 INSERT INTO employee
     VALUES (2, 'Belinda', 'Harless', '718-448-3563', 'Belinda.Harless@electronicsstore.com', 2, 2, '2020-12-20');
 
--- employee 3 --
+-- employee 3
 INSERT INTO position
     VALUES (3, 'Salesperson');
 
@@ -28,7 +28,7 @@ INSERT INTO address
 INSERT INTO employee
     VALUES (3, 'Christopher', 'Robbins', '212-880-6319', 'Christopher.Robbins@electronicsstore.com', 3, 3, '2020-12-20');
 
--- employee 4 --
+-- employee 4
 INSERT INTO address
     VALUES (4, 10, 25, '3981  Joes Road', 'Gloversville', 'New York');
 
